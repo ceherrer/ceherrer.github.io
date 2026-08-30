@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +10,20 @@
   <meta name="description" content="Academic website of César Herrero González, Doctoral Research Fellow at the University of Oslo, focused on convergent evolution, Arctic plant adaptation, population genomics and bioinformatics." />
 
   <style>
-:root {
-  --bg: #06111f;
-  --bg-soft: #0b1628;
-  --card: rgba(15, 23, 42, 0.82);
-  --card-soft: rgba(30, 41, 59, 0.7);
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #7dd3fc;
-  --accent-2: #a7f3d0;
-  --accent-3: #dbeafe;
-  --border: rgba(148, 163, 184, 0.24);
-  --white: #ffffff;
-  --max-width: 1160px;
-}
+    :root {
+      --bg: #06111f;
+      --bg-soft: #0b1628;
+      --card: rgba(15, 23, 42, 0.82);
+      --card-soft: rgba(30, 41, 59, 0.7);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #7dd3fc;
+      --accent-2: #a7f3d0;
+      --accent-3: #dbeafe;
+      --border: rgba(148, 163, 184, 0.24);
+      --white: #ffffff;
+      --max-width: 1160px;
+    }
 
     * {
       box-sizing: border-box;
@@ -39,7 +40,7 @@
       background:
         radial-gradient(circle at top left, rgba(103, 232, 249, 0.16), transparent 33%),
         radial-gradient(circle at top right, rgba(167, 243, 208, 0.12), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(196, 181, 253, 0.12), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(219, 234, 254, 0.10), transparent 35%),
         var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -408,6 +409,161 @@
       color: var(--muted);
     }
 
+    /* RESEARCH NEWS */
+
+    .news-timeline {
+      position: relative;
+      display: grid;
+      gap: 0;
+      margin-top: 1rem;
+    }
+
+    .news-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 145px 26px 1fr;
+      gap: 1rem;
+      min-height: 125px;
+    }
+
+    .news-date {
+      color: var(--accent);
+      font-weight: 900;
+      text-align: right;
+      padding-top: 0.15rem;
+      font-size: 0.9rem;
+    }
+
+    .news-marker {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .news-marker::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      bottom: -10px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .news-item:last-child .news-marker::before {
+      bottom: calc(100% - 12px);
+    }
+
+    .news-dot {
+      position: relative;
+      z-index: 2;
+      width: 13px;
+      height: 13px;
+      margin-top: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.10);
+    }
+
+    .news-content {
+      padding: 0 0 2rem;
+    }
+
+    .news-content h3 {
+      color: var(--white);
+      font-size: 1.08rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .news-content p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .news-link {
+      display: inline-block;
+      margin-top: 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 800;
+    }
+
+    /* PUBLICATIONS */
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 1.5rem;
+      padding: 1.7rem;
+      border-radius: 26px;
+      border: 1px solid rgba(125, 211, 252, 0.36);
+      background:
+        linear-gradient(135deg, rgba(125, 211, 252, 0.10), rgba(15, 23, 42, 0.86));
+    }
+
+    .publication-number {
+      width: 82px;
+      height: 82px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #042f2e;
+      font-weight: 950;
+      font-size: 1.4rem;
+    }
+
+    .publication-content h3 {
+      font-size: 1.3rem;
+      line-height: 1.35;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+
+    .publication-authors {
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+
+    .publication-authors strong {
+      color: var(--accent);
+    }
+
+    .publication-journal {
+      color: var(--accent-2);
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .publication-description {
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.1rem;
+    }
+
+    .publication-links a {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.58rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 0.88rem;
+    }
+
+    .publication-links a:hover {
+      color: var(--accent);
+      border-color: rgba(125, 211, 252, 0.5);
+      text-decoration: none;
+    }
+
     .workflow {
       margin-top: 1.2rem;
       border-radius: 20px;
@@ -479,6 +635,30 @@
         grid-template-columns: 1fr;
       }
 
+      .news-item {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+        border-left: 2px solid var(--border);
+        padding-left: 1.2rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .news-date {
+        text-align: left;
+      }
+
+      .news-marker {
+        display: none;
+      }
+
+      .news-content {
+        padding-bottom: 0;
+      }
+
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
       nav {
         align-items: flex-start;
         flex-direction: column;
@@ -501,8 +681,10 @@
       <div class="logo">César <span>Herrero González</span></div>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#news">News</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#publications">Publications</a>
         <a href="#projects">Projects</a>
         <a href="#bioinformatics">Bioinformatics</a>
         <a href="#contact">Contact</a>
@@ -511,6 +693,9 @@
   </header>
 
   <main>
+
+    <!-- HERO -->
+
     <section class="hero">
       <div>
         <div class="eyebrow">Doctoral Research Fellow · University of Oslo · Arctic plant evolution</div>
@@ -555,14 +740,17 @@
             <strong>PhD</strong>
             <span>University of Oslo</span>
           </div>
+
           <div class="stat">
             <strong>Arctic plants</strong>
             <span>Convergent evolution</span>
           </div>
+
           <div class="stat">
             <strong>HPC</strong>
             <span>Linux & SLURM workflows</span>
           </div>
+
           <div class="stat">
             <strong>Genomics</strong>
             <span>SNPs, methylation & adaptation</span>
@@ -570,6 +758,9 @@
         </div>
       </aside>
     </section>
+
+
+    <!-- ABOUT -->
 
     <section id="about">
       <div class="section-title">
@@ -608,6 +799,93 @@
         </div>
       </div>
     </section>
+
+
+    <!-- LATEST RESEARCH NEWS -->
+
+    <section id="news">
+      <div class="section-title">
+        <span>Latest research news</span>
+        <h2>A few milestones along the way.</h2>
+        <p>
+          Short updates from my research, publications, fieldwork and academic life.
+        </p>
+      </div>
+
+      <div class="news-timeline">
+
+        <div class="news-item">
+          <div class="news-date">March 2026</div>
+          <div class="news-marker">
+            <div class="news-dot"></div>
+          </div>
+          <div class="news-content">
+            <h3>The PhD journey begins!</h3>
+            <p>
+              Started my PhD as a Doctoral Research Fellow at the Natural History Museum,
+              University of Oslo, studying convergent genomic signatures of plant adaptation
+              to Arctic environments.
+            </p>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">July 2026</div>
+          <div class="news-marker">
+            <div class="news-dot"></div>
+          </div>
+          <div class="news-content">
+            <h3>Research meets visual communication</h3>
+            <p>
+              A research project I contributed to was featured by TITAN, University of Oslo,
+              as part of a collaboration exploring creative ways to communicate scientific research.
+            </p>
+            <a class="news-link"
+               href="https://www.titan.uio.no/utdanning/2026/viser-fram-forskning-med-kreativ-vri.html"
+               target="_blank">
+              Read the TITAN article →
+            </a>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">August 2026</div>
+          <div class="news-marker">
+            <div class="news-dot"></div>
+          </div>
+          <div class="news-content">
+            <h3>First publication of 2026</h3>
+            <p>
+              Our optimized MCSeED protocol for preparing epigenomic libraries from partially
+              degraded plant DNA was officially published in <em>STAR Protocols</em>.
+            </p>
+            <a class="news-link"
+               href="https://www.cell.com/star-protocols/fulltext/S2666-1667(26)00431-4"
+               target="_blank">
+              Read the paper →
+            </a>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">August 2026</div>
+          <div class="news-marker">
+            <div class="news-dot"></div>
+          </div>
+          <div class="news-content">
+            <h3>First PhD fieldwork at Kongsvoll</h3>
+            <p>
+              Our first sampling trip of the PhD took us to Kongsvoll, Norway,
+              collecting Arctic-alpine plant material for the project.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- BACKGROUND -->
 
     <section id="background">
       <div class="section-title">
@@ -658,6 +936,9 @@
       </div>
     </section>
 
+
+    <!-- EXPERIENCE -->
+
     <section id="experience">
       <div class="section-title">
         <span>Work experience</span>
@@ -665,6 +946,7 @@
       </div>
 
       <div class="timeline">
+
         <div class="timeline-item">
           <div class="timeline-date">Oct 2025 – Feb 2026</div>
           <div class="timeline-content">
@@ -682,6 +964,7 @@
               <li>Carried out downstream population genomic analyses in RStudio, including PCA, STRUCTURE-like analyses, IBD, phylogenetic analyses, polymorphism analyses, GEA, heterozygosity and inbreeding estimates.</li>
               <li>Worked on functional characterization and gene ontology interpretation of candidate genomic regions.</li>
             </ul>
+
             <div class="tags">
               <span class="tag">BWA-MEM</span>
               <span class="tag">FastQC</span>
@@ -701,10 +984,12 @@
           <div class="timeline-content">
             <h3>Research Intern</h3>
             <div class="place">Norwegian University of Life Sciences, NMBU</div>
+
             <p>
               Conducted a genomic and epigenomic study in populations of <em>Nardus stricta</em>,
               combining greenhouse work, laboratory protocols and bioinformatic analyses.
             </p>
+
             <ul>
               <li>Independently designed and executed experimental protocols from initial concept to implementation.</li>
               <li>Performed plant DNA extraction, including quality, quantity and integrity controls.</li>
@@ -712,6 +997,7 @@
               <li>Prepared genomic libraries using a self-optimized MCSeED sequencing protocol for plant epigenomic analysis.</li>
               <li>Analysed SNPs and DNA methylation patterns using advanced bioinformatics tools and custom pipelines.</li>
             </ul>
+
             <div class="tags">
               <span class="tag">Nardus stricta</span>
               <span class="tag">Epigenomics</span>
@@ -727,17 +1013,20 @@
           <div class="timeline-content">
             <h3>Research Collaborator</h3>
             <div class="place">Department of Genetics, Complutense University of Madrid</div>
+
             <p>
               Worked on population genomic approaches to study how climate change may affect
               <em>Abies pinsapo</em> and <em>Abies marocana</em>, with a focus on evolutionary
               processes and phenotypic variation.
             </p>
+
             <ul>
               <li>Developed independence in laboratory work while managing academic workload.</li>
               <li>Performed DNA and RNA extractions from <em>Pinus sylvestris</em> and <em>Abies pinsapo</em> using standardized molecular protocols.</li>
               <li>Identified SNPs associated with evolutionary processes and phenotypic variation in plant species.</li>
               <li>Contributed to population genomic analyses of climate-change-related effects in Mediterranean fir species.</li>
             </ul>
+
             <div class="tags">
               <span class="tag">Abies pinsapo</span>
               <span class="tag">Abies marocana</span>
@@ -747,8 +1036,12 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
+
+    <!-- EDUCATION -->
 
     <section id="education">
       <div class="section-title">
@@ -757,13 +1050,15 @@
       </div>
 
       <div class="timeline">
+
         <div class="timeline-item">
           <div class="timeline-date">2023 – 2025</div>
           <div class="timeline-content">
             <h3>Master’s Degree in Industrial and Environmental Biotechnology</h3>
             <div class="place">Complutense University of Madrid & Norwegian University of Life Sciences</div>
             <p>
-              Master’s Thesis: <em>“Genomic and epigenomic structure of Nardus stricta”</em>
+              Master’s Thesis:
+              <em>“Genomic and epigenomic structure of Nardus stricta”</em>
               <strong>(9.3/10)</strong>
             </p>
           </div>
@@ -775,13 +1070,85 @@
             <h3>Degree in Biological Sciences</h3>
             <div class="place">Complutense University of Madrid</div>
             <p>
-              End-of-Degree work: <em>“Genomic study of associations in populations of Abies pinsapo”</em>
+              End-of-Degree work:
+              <em>“Genomic study of associations in populations of Abies pinsapo”</em>
               <strong>(9.1/10)</strong>
             </p>
           </div>
         </div>
+
       </div>
     </section>
+
+
+    <!-- PUBLICATIONS -->
+
+    <section id="publications">
+      <div class="section-title">
+        <span>Publications</span>
+        <h2>Published research.</h2>
+        <p>
+          Peer-reviewed publications and research outputs resulting from my work in
+          genomics, epigenomics and molecular biology.
+        </p>
+      </div>
+
+      <article class="publication-card">
+
+        <div class="publication-number">
+          01
+        </div>
+
+        <div class="publication-content">
+
+          <h3>
+            Protocol for optimized methylation context-sensitive enzyme ddRAD library
+            preparation from partially degraded genomic plant DNA
+          </h3>
+
+          <p class="publication-authors">
+            <strong>César Herrero-González</strong>,
+            Sylvia Sagen Johnsen,
+            Rómulo Sacramento Sobral &
+            Marian Schubert
+          </p>
+
+          <p class="publication-journal">
+            STAR Protocols · 7(3) · 104778 · 2026
+          </p>
+
+          <p class="publication-description">
+            An optimized MCSeED library-preparation protocol for epigenomic analysis
+            of plant samples yielding low-quality or partially degraded genomic DNA,
+            enabling methylation analysis across CG, CHG and CHH sequence contexts.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Plant epigenomics</span>
+            <span class="tag">MCSeED</span>
+            <span class="tag">DNA methylation</span>
+            <span class="tag">Library preparation</span>
+            <span class="tag">STAR Protocols</span>
+          </div>
+
+          <div class="publication-links">
+            <a href="https://www.cell.com/star-protocols/fulltext/S2666-1667(26)00431-4"
+               target="_blank">
+              Read the paper ↗
+            </a>
+
+            <a href="https://doi.org/10.1016/j.xpro.2026.104778"
+               target="_blank">
+              DOI ↗
+            </a>
+          </div>
+
+        </div>
+      </article>
+    </section>
+
+
+    <!-- PROJECTS -->
 
     <section id="projects">
       <div class="section-title">
@@ -794,6 +1161,7 @@
       </div>
 
       <div class="grid grid-2">
+
         <div class="card card-highlight">
           <h3>Convergent genomic signatures of Arctic plant adaptation</h3>
           <p>
@@ -802,6 +1170,7 @@
             evolutionary biology and bioinformatics to investigate whether independent plant lineages
             show repeated genomic responses to similar environmental pressures.
           </p>
+
           <div class="tags">
             <span class="tag">PhD project</span>
             <span class="tag">Arctic adaptation</span>
@@ -819,9 +1188,13 @@
           </p>
 
           <div class="workflow">
-            <img src="assets/workflow-xestobium.png" alt="Workflow from raw sequences to VCF output" onerror="this.parentElement.style.display='none';">
+            <img src="assets/workflow-xestobium.png"
+                 alt="Workflow from raw sequences to VCF output"
+                 onerror="this.parentElement.style.display='none';">
+
             <div class="workflow-caption">
-              Workflow overview: raw sequences → quality control → trimming → mapping → SNP calling → VCF output.
+              Workflow overview: raw sequences → quality control → trimming → mapping →
+              SNP calling → VCF output.
             </div>
           </div>
 
@@ -845,6 +1218,7 @@
             laboratory DNA extraction, MCSeED library preparation and computational analysis of
             SNPs and DNA methylation patterns.
           </p>
+
           <div class="tags">
             <span class="tag">Master’s thesis</span>
             <span class="tag">Nardus stricta</span>
@@ -861,6 +1235,7 @@
             <em>Abies pinsapo</em>, developed within a broader research context studying climate
             change effects on Spanish and Moroccan fir species.
           </p>
+
           <div class="tags">
             <span class="tag">Bachelor’s thesis</span>
             <span class="tag">Abies pinsapo</span>
@@ -869,8 +1244,12 @@
             <span class="tag">Population genomics</span>
           </div>
         </div>
+
       </div>
     </section>
+
+
+    <!-- BIOINFORMATICS -->
 
     <section id="bioinformatics">
       <div class="section-title">
@@ -883,6 +1262,7 @@
       </div>
 
       <div class="grid grid-3">
+
         <div class="card">
           <h3>HPC & workflow execution</h3>
           <ul>
@@ -915,39 +1295,60 @@
             <li>GEA, heterozygosity and inbreeding analyses</li>
           </ul>
         </div>
+
       </div>
     </section>
-<section id="contact">
-  <div class="section-title">
-    <span>Contact</span>
-    <h2>Connect with me!</h2>
-    <p>
-      I am open to potential collaborations with research groups interested in plant evolutionary
-      genomics, Arctic adaptation, population genomics, epigenomics and bioinformatics workflows.
-      You can find more information about my current academic profile through the University of Oslo,
-      or contact me directly by email.
-    </p>
-  </div>
 
-  <div class="card">
-    <h3>Academic and professional profiles</h3>
-    <p>
-      I am always happy to discuss research ideas, collaborative projects and computational approaches
-      for studying adaptation in non-model organisms. También puedes escribirme en español ;)
-    </p>
-    
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+      <div class="section-title">
+        <span>Contact</span>
+        <h2>Connect with me!</h2>
+        <p>
+          I am open to potential collaborations with research groups interested in plant evolutionary
+          genomics, Arctic adaptation, population genomics, epigenomics and bioinformatics workflows.
+          You can find more information about my current academic profile through the University of Oslo,
+          or contact me directly by email.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Academic and professional profiles</h3>
+        <p>
+          I am always happy to discuss research ideas, collaborative projects and computational approaches
+          for studying adaptation in non-model organisms. También puedes escribirme en español ;)
+        </p>
+
         <div class="contact-links">
           <a href="mailto:c.h.gonzalez@nhm.uio.no">Email</a>
-          <a href="https://github.com/ceherrer" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/c%C3%A9sar-herrero-gonz%C3%A1lez-7545b1215/" target="_blank">LinkedIn</a>
-          <a href="https://www.nhm.uio.no/english/about/organization/research-collections/people/cesarh/" target="_blank">University of Oslo profile</a>
+
+          <a href="https://github.com/ceherrer"
+             target="_blank">
+            GitHub
+          </a>
+
+          <a href="https://www.linkedin.com/in/c%C3%A9sar-herrero-gonz%C3%A1lez-7545b1215/"
+             target="_blank">
+            LinkedIn
+          </a>
+
+          <a href="https://www.nhm.uio.no/english/about/organization/research-collections/people/cesarh/"
+             target="_blank">
+            University of Oslo profile
+          </a>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <p>© 2026 César Herrero González · Plant evolutionary genomics & bioinformatics</p>
   </footer>
+
 </body>
 </html>
+```
+
